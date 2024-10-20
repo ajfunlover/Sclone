@@ -51,16 +51,6 @@ phases:
   #     #- aws ses send-email --from "ajaysharmar2991@gmail.com" --to "ajaysharmar2991@gmail.com" --subject "CodeBuild Status: $CODEBUILD_BUILD_ID" --text "Build status: $CODEBUILD_BUILD_STATUS" --region "us-east-1e" 
   #     # Update with your preferred AWS region
 
-post_build:
-  commands:
-    - aws ses send-email \
-        --from "ajaysharmar2991@gmail.com" \
-        --to "ajaysharmar2991@gmail.com" \
-        --subject "CodeBuild Status: $CODEBUILD_BUILD_ID" \
-        --text "Build status: $CODEBUILD_BUILD_STATUS" \
-        --region "us-east-1e" # Update with your preferred AWS region
-
-
 artifacts:
   files:
     - appspec.yaml
